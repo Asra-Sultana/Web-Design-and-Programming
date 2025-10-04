@@ -651,3 +651,14 @@ body {
     font-size: 1.5rem;
   }
 }
+/* Mobile adjustments for the hero button */
+@media (max-width: 767px) {
+  .hero-btn {
+    display: block;            /* full-width button on mobile */
+    width: 90%;                /* adjust width to fit nicely */
+    max-width: 300px;          /* optional: prevent it from being too wide */
+    margin: 15px auto 0 auto;  /* centers the button horizontally */
+    padding: 12px 20px;        /* adjust padding for smaller screens */
+    font-size: 1rem;           /* smaller font for mobile */
+  }
+}
