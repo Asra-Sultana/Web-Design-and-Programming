@@ -650,9 +650,9 @@ body {
   section h2 {
     font-size: 1.5rem;
   }
-}
+
 /* Mobile adjustments for the hero button */
-@media (max-width: 767px) {
+
   .hero-btn {
     display: block;            /* full-width button on mobile */
     width: 90%;                /* adjust width to fit nicely */
@@ -661,4 +661,14 @@ body {
     padding: 12px 20px;        /* adjust padding for smaller screens */
     font-size: 1rem;           /* smaller font for mobile */
   }
+  /* Mobile adjustments for hero content */
+
+  .hero-content {
+    display: flex;
+    flex-direction: column; /* stack heading, tagline, and button vertically */
+    align-items: center;    /* center horizontally */
+    gap: 15px;              /* space between heading, tagline, and button */
+    text-align: center;     /* ensure text is centered */
+  }
+
 }
