@@ -185,7 +185,10 @@ header h1 {
 .hero-btn:hover {
   background-color: var(--secondary);
 }
-
+.hero-btn:active {
+  background-color: var(--primary); 
+  transform: translateY(0); 
+}
 /* Mobile Adjustments */
 @media (max-width: 767px) {
   .hero-banner { height: 300px; }
@@ -707,13 +710,14 @@ body {
   }
  
  
+  @media (max-width: 767px) {
   .hero-banner {
-    min-height: 100vh; /* full screen height ensures nothing gets cut off */
-    padding: 60px 20px;
+    padding: 80px 20px 40px; /* reduce top space */
+    min-height: auto; /* remove forced full-screen height */
     text-align: center;
     display: flex;
-    flex-direction: column; /* stack elements */
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; /* align from top instead of center */
     align-items: center;
     background-size: cover;
     background-position: center;
@@ -745,6 +749,8 @@ body {
     padding: 10px 25px;
     font-size: 1rem;
   }
+}
+
 }
 
 
