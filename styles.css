@@ -706,20 +706,26 @@ body {
     grid-template-columns: 1fr; /* single column on mobile */
   }
  
+ 
   .hero-banner {
-    height: auto;
+    min-height: 100vh; /* full screen height ensures nothing gets cut off */
     padding: 60px 20px;
     text-align: center;
     display: flex;
-    flex-direction: column; /* stack items vertically */
+    flex-direction: column; /* stack elements */
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .hero-content {
     display: flex;
-    flex-direction: column; /* ensures tagline & button are vertical */
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    max-width: 90%;
   }
 
   .hero-content h1 {
@@ -729,17 +735,18 @@ body {
 
   .hero-content .tagline {
     font-size: 1rem;
-    margin-bottom: 10px; /* small space before button */
-    display: block; /* ensure tagline takes full line */
+    margin-bottom: 15px;
+    display: block;
   }
 
   .hero-btn {
     display: block;
-    margin-top: 10px; /* perfect spacing under tagline */
-    padding: 10px 20px;
+    margin-top: 10px;
+    padding: 10px 25px;
     font-size: 1rem;
   }
 }
+
 
 
 
