@@ -705,9 +705,42 @@ body {
     .card-wrap {
     grid-template-columns: 1fr; /* single column on mobile */
   }
-    .hero-btn {
-    margin-top: 10px; /* small, perfect gap below tagline */
+ 
+  .hero-banner {
+    height: auto;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column; /* ensures tagline & button are vertical */
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-content .tagline {
+    font-size: 1rem;
+    margin-bottom: 10px; /* small space before button */
+    display: block; /* ensure tagline takes full line */
+  }
+
+  .hero-btn {
+    display: block;
+    margin-top: 10px; /* perfect spacing under tagline */
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 }
+
+
 
 
