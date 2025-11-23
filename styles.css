@@ -195,37 +195,6 @@ header h1 {
   .hero-content h1 { font-size: 1.8rem; }
   .hero-content .tagline { font-size: 1rem; }
   .hero-btn { padding: 10px 20px; font-size: 1rem; }
-}
-
-.marquee-quote {
-  overflow: hidden;
-  background: var(--light);
-  color: var(--dark);
-  padding: 10px 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 15s linear infinite;
-}
-
-.marquee span {
-  padding-right: 50px; /* small space, adjust if needed */
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-@media (max-width: 767px) {
   .hero-banner img {
     height: auto; 
   }
