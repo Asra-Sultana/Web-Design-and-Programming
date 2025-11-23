@@ -32,7 +32,16 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+<script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const menuToggle = document.getElementById('menu-toggle');
 
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.checked = false; // uncheck the menu
+    });
+  });
+</script>
  <section class="hero-banner">
   <div class="hero-content">
     <h1>Your Health Matters</h1>
@@ -42,17 +51,13 @@
     <a href="#checkups" class="hero-btn">Start Your Journey</a>
   </div>
 </section>
-</header>
-
-   
-
 </section><section class="marquee-quote">
   <div class="marquee">
     <span>“Your health is your greatest wealth. Take care of your body, listen to your doctors, and embrace a lifestyle that nurtures both mind and spirit.”</span>
     <span>“Your health is your greatest wealth. Take care of your body, listen to your doctors, and embrace a lifestyle that nurtures both mind and spirit.”</span>
   </div>
 </section>
-
+    
 
 
 
@@ -276,5 +281,6 @@
         <p>&copy; 2025 Your Health Matters. All rights reserved.</p>
       </div>
     </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>
