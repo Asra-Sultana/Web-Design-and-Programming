@@ -24,7 +24,24 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+   grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
 
 /* Header */
 header {
@@ -33,6 +50,8 @@ header {
   padding: 25px 20px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;          /* ENABLE GRID */
+  place-items: center;
 }
 
 .header-content {
@@ -53,7 +72,6 @@ header h1 {
 .navbar {
   background:  linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);;
   color: white;
-  display: flex;
   justify-content:center;
   align-items: center;
   padding: 12px 20px;
@@ -98,32 +116,37 @@ header h1 {
 
 /* Mobile View */
 @media (max-width: 768px) {
+
+  .navbar {
+    display: grid;
+    grid-template-columns: auto 1fr; /* LEFT = hamburger, RIGHT = space/title */
+    
+    padding: 1px 15px;
+  }
+
+  .hamburger {
+    display: block;
+    justify-self: start; /* FORCE to the left */
+    align-items: left;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
-    background:  linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
     position: absolute;
-    top: 50px;
-    right: 20px;
-    width: auto;
+    top: 55px;
+    left: 15px;
     padding: 10px 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 
-  .nav-links li {
-    margin: 10px 0;
-    text-align: right;
-  }
-
   #menu-toggle:checked ~ .nav-links {
     display: flex;
   }
-
-  .hamburger {
-    display: block;
-  }
 }
+
 /* Hero Banner */
 .hero-banner {
   position: relative;
@@ -306,12 +329,6 @@ section h2 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
-
-  
-
-
-
 /* Clearfix for floated elements */
 .clearfix::after {
   content: "";
@@ -416,9 +433,6 @@ section h2 {
   margin-bottom: 30px;
 }
 
-
-
-
 /* Mental Wellness Cards */
 .mental-cards {
   display: flex;
@@ -504,9 +518,6 @@ section h2 {
   font-size: 1.1rem;
   line-height: 1.5;
   text-align: justify;
- 
-
-
 
 }
 
@@ -523,6 +534,9 @@ footer {
   padding: 25px 20px;
   margin-top: 40px;
   text-align: center;
+  display: block;                   /* Enable GRID */
+  grid-template-columns: repeat(1, 1fr); 
+  
 }
 
 .footer-content {
@@ -553,10 +567,11 @@ footer a:hover {
   background-color: var(--light);
   padding: 20px;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 500px ;
   margin: 40px auto;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  
 }
 
 .feedback-section h2 {
