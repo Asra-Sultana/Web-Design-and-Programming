@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XSWTVGRLGL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XSWTVGRLGL');
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Health Matters</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+  
+      <nav class="navbar">
+  
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <ul class="nav-links">
+    <li><a href="#welcome">Home</a></li>
+    <li><a href="#checkups">Checkups</a></li>
+    <li><a href="#wellness-tips">Health Tips</a></li>
+     <li><a href="#mental-wellness">Mental Wellness</a></li>
+    <li><a href="#doctors">Doctors</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+ <section class="hero-banner">
+  <div class="hero-content">
+    <h1>Your Health Matters</h1>
+    <p class="tagline">
+      <span>Care.</span> <span>Wellness.</span> <span>Guidance.</span>
+    </p>
+    <a href="#checkups" class="hero-btn">Start Your Journey</a>
+  </div>
+</section>
+    </header>
+
+    <main class="container">
+      <section id="welcome" class="welcome-section">
+        <h2 ></h2>
+        <p>
+        </p>
+      </section>
+
+      <section id="checkups" class="content-section clearfix">
+        <h2 ></h2>
+        <img>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+      </section>
+
+      <section id="wellness-tips">
+  <h2></h2>
+
+  <!-- TEMPLATE FOR WELLNESS CARD -->
+  <template id="wellness-card-template">
+    <div class="card">
+      <i class="card-icn"></i>
+      <h3 class="card-title"></h3>
+      <p class="card-info"></p>
+      <a class="card-btn" target="_blank">
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+  </template>
+
+  <!-- JS Will Generate Cards Here -->
+  <div class="card-wrap" id="wellness-card-container"></div>
+</section>
+
+      <!-- MENTAL WELLNESS SECTION -->
+<section id="mental-wellness" class="content-section">
+  <h2></h2>
+
+  <!-- Video Grid -->
+  <div class="video-grid" id="mental-video-container">
+    <!-- JS will inject iframe videos here -->
+  </div>
+
+  <!-- TEMPLATE FOR MENTAL CARD -->
+  <template id="mental-card-template">
+    <div class="mental-card">
+      <h3 class="mental-title"></h3>
+      <p class="mental-desc"></p>
+      <p><strong>Benefits:</strong> <span class="mental-benefits"></span></p>
+    </div>
+  </template>
+
+  <!-- JS will generate cards here -->
+  <div class="mental-cards" id="mental-card-container"></div>
+</section>
+      <section id="doctors" class="content-section clearfix">
+        <h2 ></h2>
+        <img
+          src=""
+          alt=""
+          class="float-right"
+        />
+        <p></p>
+        <p></p>
+        <div id="doctors-text"></div>
+      </section>
+
+      <section id="testimonials" class="testimonials">
+  <h2></h2>
+
+  <!-- TEMPLATE FOR TESTIMONIAL -->
+  <template id="testimonial-template">
+    <div class="testimonial">
+      <p class="testimonial-msg"></p>
+      <span class="testimonial-author"></span>
+    </div>
+  </template>
+
+  <!-- JS will generate testimonials here -->
+  <div class="testimonial-grid" id="testimonial-container"></div>
+</section>
+
+    
+    </main>
+
+    <footer id="contact">
+      <div class="footer-content">
+        <h3 >Made by Asra Sultana</h3>
+        <section class="feedback-section">
+  <h2>Website Feedback</h2>
+  <p>Was this website helpful?</p>
+  <form>
+    <label>
+      <input type="radio" name="feedback" value="yes" required>
+      Yes
+    </label>
+    <label>
+      <input type="radio" name="feedback" value="no">
+      No
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+        <p>Contact: <a href="mailto:sultanaa@cua.edu">sultanaa@cua.edu</a></p>
+        <p>&copy; 2025 Your Health Matters. All rights reserved.</p>
+      </div>
+    </footer>
+    <script type="module">
+import { contentData } from "./data/content.js";
+
+// Wellness Cards
+const wellnessContainer = document.getElementById("wellness-card-container");
+const wellnessTemplate = document.getElementById("wellness-card-template");
+contentData.wellnessTips.forEach(item => {
+  const clone = wellnessTemplate.content.cloneNode(true);
+  clone.querySelector(".card-icn").className = item.icon + " card-icn";
+  clone.querySelector(".card-title").textContent = item.title;
+  clone.querySelector(".card-info").textContent = item.info;
+  clone.querySelector(".card-btn").href = item.link;
+  wellnessContainer.appendChild(clone);
+});
+
+// Mental Wellness Cards + Videos
+const mentalContainer = document.getElementById("mental-card-container");
+const mentalTemplate = document.getElementById("mental-card-template");
+const videoContainer = document.getElementById("mental-video-container");
+
+contentData.mentalWellnessData.forEach(item => {
+  // Cards
+  const clone = mentalTemplate.content.cloneNode(true);
+  clone.querySelector(".mental-title").textContent = item.title;
+  clone.querySelector(".mental-desc").textContent = item.desc;
+  clone.querySelector(".mental-benefits").textContent = item.benefits;
+  mentalContainer.appendChild(clone);
+
+  // Videos
+  if (item.video) {
+    const iframe = document.createElement("iframe");
+    iframe.width = "100%";
+    iframe.height = "200";
+    iframe.src = item.video;
+    iframe.allowFullscreen = true;
+    videoContainer.appendChild(iframe);
+  }
+});
+
+// Doctors Section
+const doctors = contentData.doctorsSection;
+document.querySelector("#doctors h2").textContent = doctors.title;
+const img = document.querySelector("#doctors-team");
+const textContainer = document.getElementById("doctors-text");
+doctors.paragraphs.forEach(p => {
+  const para = document.createElement("p");
+  para.textContent = p;
+  textContainer.appendChild(para);
+});
+import { testimonialsData } from "./data/content.js";
+
+const container = document.getElementById("testimonial-container");
+const template = document.getElementById("testimonial-template");
+
+testimonialsData.forEach(item => {
+  const clone = template.content.cloneNode(true);
+  clone.querySelector(".testimonial-msg").textContent = `"${item.message}"`;
+  clone.querySelector(".testimonial-author").textContent = `- ${item.author}`;
+  container.appendChild(clone);
+});
+
+</script>
+
+  </body>
+</html>

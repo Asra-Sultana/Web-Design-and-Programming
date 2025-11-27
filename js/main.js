@@ -33,4 +33,5 @@ printRightTree(5);
       menuToggle.checked = false; // uncheck the menu
     });
   });
+import { contentData } from "../data/content.js";
 
