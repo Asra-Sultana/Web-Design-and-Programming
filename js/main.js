@@ -33,5 +33,14 @@ printRightTree(5);
       menuToggle.checked = false; // uncheck the menu
     });
   });
-import { contentData } from "../data/content.js";
+import {
+  wellnessTips,
+  mentalWellnessVideos,
+  mentalCards,
+  doctorsData,
+  testimonialsData
+} from "../data/content.js";
+// Test
+console.log(wellnessTips);
+console.log(mentalWellnessVideos);
 

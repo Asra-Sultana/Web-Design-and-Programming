@@ -91,7 +91,7 @@
     <div class="mental-card">
       <h3 class="mental-title"></h3>
       <p class="mental-desc"></p>
-      <p><strong>Benefits:</strong> <span class="mental-benefits"></span></p>
+      <p><strong></strong> <span class="mental-benefits"></span></p>
     </div>
   </template>
 
@@ -151,68 +151,7 @@
         <p>&copy; 2025 Your Health Matters. All rights reserved.</p>
       </div>
     </footer>
-    <script type="module">
-import { contentData } from "./data/content.js";
-
-// Wellness Cards
-const wellnessContainer = document.getElementById("wellness-card-container");
-const wellnessTemplate = document.getElementById("wellness-card-template");
-contentData.wellnessTips.forEach(item => {
-  const clone = wellnessTemplate.content.cloneNode(true);
-  clone.querySelector(".card-icn").className = item.icon + " card-icn";
-  clone.querySelector(".card-title").textContent = item.title;
-  clone.querySelector(".card-info").textContent = item.info;
-  clone.querySelector(".card-btn").href = item.link;
-  wellnessContainer.appendChild(clone);
-});
-
-// Mental Wellness Cards + Videos
-const mentalContainer = document.getElementById("mental-card-container");
-const mentalTemplate = document.getElementById("mental-card-template");
-const videoContainer = document.getElementById("mental-video-container");
-
-contentData.mentalWellnessData.forEach(item => {
-  // Cards
-  const clone = mentalTemplate.content.cloneNode(true);
-  clone.querySelector(".mental-title").textContent = item.title;
-  clone.querySelector(".mental-desc").textContent = item.desc;
-  clone.querySelector(".mental-benefits").textContent = item.benefits;
-  mentalContainer.appendChild(clone);
-
-  // Videos
-  if (item.video) {
-    const iframe = document.createElement("iframe");
-    iframe.width = "100%";
-    iframe.height = "200";
-    iframe.src = item.video;
-    iframe.allowFullscreen = true;
-    videoContainer.appendChild(iframe);
-  }
-});
-
-// Doctors Section
-const doctors = contentData.doctorsSection;
-document.querySelector("#doctors h2").textContent = doctors.title;
-const img = document.querySelector("#doctors-team");
-const textContainer = document.getElementById("doctors-text");
-doctors.paragraphs.forEach(p => {
-  const para = document.createElement("p");
-  para.textContent = p;
-  textContainer.appendChild(para);
-});
-import { testimonialsData } from "./data/content.js";
-
-const container = document.getElementById("testimonial-container");
-const template = document.getElementById("testimonial-template");
-
-testimonialsData.forEach(item => {
-  const clone = template.content.cloneNode(true);
-  clone.querySelector(".testimonial-msg").textContent = `"${item.message}"`;
-  clone.querySelector(".testimonial-author").textContent = `- ${item.author}`;
-  container.appendChild(clone);
-});
-
-</script>
-
+    <script type="module" src="data/content.js"></script>
+<script type="module" src="js/main.js"></script>
   </body>
 </html>
