@@ -25,14 +25,17 @@ function printRightTree(n) {
 }
 printRightTree(5);
  
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const menuToggle = document.getElementById('menu-toggle');
+ const navLinks = document.querySelectorAll('.nav-links a');
+const menuToggle = document.getElementById('menu-toggle');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menuToggle.checked = false; // uncheck the menu
-    });
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    setTimeout(() => {
+      menuToggle.checked = false; 
+    }, 50); 
   });
+});
+
 import {
   wellnessTips,
   mentalWellnessVideos,
