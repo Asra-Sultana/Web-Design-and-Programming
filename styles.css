@@ -72,8 +72,6 @@ header h1 {
 .navbar {
   background:  linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);;
   color: white;
-  justify-content:center;
-  align-items: center;
   padding: 12px 20px;
   position: sticky;
   top: 0;
@@ -231,9 +229,6 @@ header h1 {
   }
 }
 
-
-
-
 /* Main Grid Layout */
 .container {
   display: grid;
@@ -255,13 +250,10 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   scroll-margin-top: 70px;
 }
-
-
 section:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
 section h2 {
   color: var(--primary);
   margin-bottom: 20px;
@@ -270,7 +262,6 @@ section h2 {
   border-bottom: 2px solid var(--accent);
   padding-bottom: 10px;
 }
-
 /* Welcome Section */
 .welcome-section {
   text-align: justify;
@@ -281,7 +272,6 @@ section h2 {
     rgba(233, 196, 106, 0.1)
   );
 }
-
 .welcome-section p {
   font-size: 1.1rem;
   max-width: 800px;
@@ -289,7 +279,6 @@ section h2 {
    text-align: justify;
 
 }
-
 /* Image Styles with Float */
 .float-left {
   float: left;
@@ -301,7 +290,6 @@ section h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 3px solid var(--accent);
 }
-
 .float-right {
   float: right;
   margin: 0 0 15px 25px;
@@ -312,7 +300,6 @@ section h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 3px solid var(--accent);
 }
-
 .full-width-img-container {
   display: flex;               
   justify-content: center;     
@@ -320,7 +307,6 @@ section h2 {
   flex-wrap: wrap;             
   margin-top: 20px;
 }
-
 .full-width-img {
   max-width: 45%;              
   width: 100%;
@@ -328,7 +314,6 @@ section h2 {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
 /* Clearfix for floated elements */
 .clearfix::after {
   content: "";
